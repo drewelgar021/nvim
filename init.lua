@@ -206,6 +206,17 @@ do
     },
   }
 
+  -- Return to last cursor position when opening a file
+  vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+      local mark = vim.api.nvim_buf_get_mark(0, '"')
+      local lcount = vim.api.nvim_buf_line_count(0)
+      if mark[1] > 0 and mark[1] <= lcount then
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      end
+    end,
+  })
+
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
   -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
