@@ -456,8 +456,6 @@ do
   -- ... and there is more!
   --  Check out: https://github.com/nvim-mini/mini.nvim
 
-  vim.pack.add { gh 'nxhung2304/lastplace.nvim' }
-
 end
 
 -- ============================================================
