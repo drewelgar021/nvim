@@ -402,7 +402,7 @@ do
     arg = "leetcode.nvim",
 
     ---@type lc.lang
-    lang = "python3",
+    lang = "java",
 
     cn = { -- leetcode.cn
         enabled = false, ---@type boolean
